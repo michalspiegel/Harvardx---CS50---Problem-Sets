@@ -13,7 +13,7 @@ int main(void)
     //GETS THE TEXT AS AN INPUT
     string text_input = get_string("Text:");
    
-   //CODE THAT COUNTS THE NUMBER OF LETTERS, WORDS AND SENTENCES
+    //CODE THAT COUNTS THE NUMBER OF LETTERS, WORDS AND SENTENCES
     for (int i = 0, n = strlen(text_input); i < n; i++ )
     {
         if (text_input[i] >= 'A' && text_input[i] <= 'z')
@@ -36,7 +36,7 @@ int main(void)
     
     //ALGORITHM THAT CALCULATES THE GRADE PRECISELY AS A FLOAT
     float avrg_letters = ((float) letters / (float) words) * 100;
-    float avrg_sentences = ((float) sentences /(float) words) * 100;
+    float avrg_sentences = ((float) sentences / (float) words) * 100;
     float grade = (0.0588 * avrg_letters) - (0.296 * avrg_sentences) - 15.8;
     
     
@@ -55,11 +55,11 @@ int main(void)
     {
         if (grade >= (int)grade + 0.5)
         {
-            printf("Grade %d\n",(int)grade + 1);
+            printf("Grade %d\n", (int)grade + 1);
         }
         else
         {
-            printf("Grade %d\n",(int)grade);
+            printf("Grade %d\n", (int)grade);
         }
     }
   
