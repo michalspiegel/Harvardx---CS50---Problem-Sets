@@ -90,10 +90,8 @@ void print_winner(void)       //Print the winner (or winners) of the election
 
 {
     //Indexes of the biggest numbers in the candidates.votes
-    int winner_index[candidate_count];
     int biggest = 0;
-    int counter = 0;
-    
+  
     // Check for the biggest value
     for (int i = 0; i < candidate_count; i++)
     {
@@ -103,21 +101,14 @@ void print_winner(void)       //Print the winner (or winners) of the election
         }
     }
     
-    // Check how many times does the biggest value occur in the list and write down the indexes 
+    
+    // Print out the name/s that have the most votes 
     for (int i = 0; i < candidate_count; i++)
     {
-        if (biggest == candidates[i].votes)
+        if(candidate[i].votes == biggest)
         {
-           
-            winner_index[counter] = i;
-            counter++;
-        }
-    }
-    
-    // Print out the names of the winner/s based on the index/es obtained beforehand
-    for (int i = 0; i < counter; i++)
-    {
-        printf("%s\n", candidates[winner_index[i]].name);
-    }
+            printf("%s\n", candidates[i].name);
+        }    
+    }    
 }
 
