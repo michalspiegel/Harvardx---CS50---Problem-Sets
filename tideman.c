@@ -223,26 +223,17 @@ bool is_cycle(winner, loser)
         return true;
     }
     
-    int I [MAX * (MAX - 1) / 2];
-    int i_counter = 0;
-
     for (int i = 0; i < candidate_count; i++)
     {
     
         if (locked[loser][i] == true)
         {
-            I [i_counter] = i;
-            i_counter++;
-           
-        }
-    }
-    
-    //tries out every position of an edge ("true") in the loser index row after the above if checks for them - considering that there can be more than one
-    for (int i = 0; i < i_counter; i++)
-    {
-        if (is_cycle(winner, I[i]))
-        {
-            return true;
+            //tries is_cycle() for this current setting, considering there can be more true values in a single row
+            if (is_cycle(winner,i))
+            {
+                return true;
+            }
+            
         }
     }
     return false;
