@@ -48,7 +48,7 @@ int main(int argc, char *argv[])
 
 
     //Repeat until the end of the file - fread() returns the number of elements of the given size that were succesfuly read - if fread() == 0 -> end of file
-    while ((bytesRead = fread(buffer, sizeof(BYTE), 512, infile)) > 0)
+    for (size_t bytesRead = fread(buffer, sizeof(BYTE),512, infile); bytesRead > 0; bytesRead = fread(buffer, sizeof(BYTE),512, infile))
     {
         
         //Find out if the first 4 bytes of the 512 B block  match with so-called JPEG 'initials'
