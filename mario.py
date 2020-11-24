@@ -3,12 +3,13 @@
 from cs50 import get_int
 
 
-# Get a suitable number as an input
-while True:
-    height = get_int("Height:")
-    if height > 0 and height < 9:
-        break
+height = 0
 
+# Get a suitable number as an input
+while height < 1 or height > 8: :
+    height = get_int("Height:")
+    
+    
 # Iterate
 for i in range(1, height + 1):
 
