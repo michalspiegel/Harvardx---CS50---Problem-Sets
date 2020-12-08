@@ -61,14 +61,14 @@ for STR in STRs:
                 #If yes add "one repeat" to tempMax and advance in list
                 tempMax += 1
                 i += l
-
+            # After the STR stops repeating in the sequence - add the tempMax (the number of times the STR had repeated itself) into the list
             consecutive_repeats.append(tempMax)
 
 
     # If the list is not empty
     if consecutive_repeats:
         # Creating a special dna ID
-        dna_id = dna_id + str(max(consecutive_repeats))
+        dna_id = dna_id + str(max(consecutive_repeats)) # The most any STR had repeated in a sequence
 
 
 
